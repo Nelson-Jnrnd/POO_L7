@@ -13,8 +13,9 @@ public class ObjectList<T> {
     public int size() {
         int counter = 0;
         Examinator<T> currentElement = new Examinator<>(head);
-        while (currentElement.next() != null) {
+        while (currentElement.hasNext()) {
             counter++;
+            currentElement.next();
         }
         return counter;
     }
