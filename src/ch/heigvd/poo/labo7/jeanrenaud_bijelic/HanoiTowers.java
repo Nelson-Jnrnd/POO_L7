@@ -1,30 +1,33 @@
 package ch.heigvd.poo.labo7.jeanrenaud_bijelic;
 
-import EX_ObjectList.src.Examinator;
-
-import java.util.Iterator;
-
 public class HanoiTowers {
+    Stack stackA = new Stack();
+    Stack stackB = new Stack();
+    Stack stackC = new Stack();
+
+
     public static void main(String[] args) {
         Stack<Integer> stack = new Stack<>();
 
-        Integer monInt = 5;
-        String monString = "string";
-        Integer monInt2 = 8;
-        Integer monInt3 = 31;
-        stack.push(monInt);
-        //stack.push(monString);
-        stack.push(monInt2);
-        stack.push(monInt3);
+        for(int i = 0; i < 10; ++i){
+            stack.push(i);
+        }
+
+        Object array[] = stack.toArray();
+
+        for(Object value : array){
+            System.out.println(value);
+        }
 
         System.out.println("Peek = " + stack.peek());
 
 
         System.out.println(stack);
-        Examinator<Integer> iterator = stack.front();
+
+        /*Examinator<Integer> iterator = stack.front();
         while(iterator.hasNext()){
             System.out.println("Custom ite : " + iterator.next());
-        }
+        }*/
         /*do {
 
         }while (iterator.hasNext());*/
