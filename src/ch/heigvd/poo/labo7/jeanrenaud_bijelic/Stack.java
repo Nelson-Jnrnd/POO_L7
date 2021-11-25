@@ -1,43 +1,47 @@
 package ch.heigvd.poo.labo7.jeanrenaud_bijelic;
 
-import EX_ObjectList.src.Examinator;
-import EX_ObjectList.src.ObjectList;
+import javax.sound.sampled.LineUnavailableException;
+import java.util.EmptyStackException;
 
 public class Stack<T> {
-    private ObjectList<T> list;
-
+    private Element<T> beforeBegin;
     private Examinator<T> iterator;
+    private int size = 0;
 
     public Stack() {
-        this.list = new ObjectList<>();
-        //this.iterator = new Examinator((Element) values.get(0));
+        beforeBegin = new Element<>(null, null);
+        iterator = new Examinator<>(beforeBegin.next);
     }
 
     public void push(T object) throws RuntimeException {
-        list.insert(object);
+        beforeBegin.next = new Element(object, beforeBegin.next);
+        ++size;
     }
 
-    public void pop() throws RuntimeException {
-        list.remove(list.front());
+    public void pop() throws EmptyStackException {
+        if(empty()){
+            throw new EmptyStackException();
+        }
+        beforeBegin.next = beforeBegin.next.next;
     }
 
     /**
      *
      * @return
      */
-    public T peek(){
-        if(list.isEmpty())
-            throw new RuntimeException();
-        return list.front().next().getData();
+    public T peek() throws EmptyStackException {
+        if(empty())
+            throw new EmptyStackException();
+        return beforeBegin.next.data;
     }
 
-    public Object[] toArray(){
-        if(list.isEmpty())
-            throw new RuntimeException();
-        Examinator<T> examinator = list.front();
-        Object[] objects = new Object[list.size()];
+    public Object[] toArray() throws EmptyStackException{
+        if(empty())
+            throw new EmptyStackException();
+        Examinator<T> examinator = new Examinator<>(beforeBegin);
+        Object[] objects = new Object[size];
         for(int i = 0; i < objects.length; ++i){
-            objects[i] = list.get(i);
+            objects[i] = examinator.next();
         }
         return objects;
     }
@@ -47,22 +51,18 @@ public class Stack<T> {
      * @return
      */
     public boolean empty(){
-        return list.isEmpty();
+        return beforeBegin.next == null;
     }
 
     @Override
     public String toString() {
         StringBuilder stringBuilder = new StringBuilder();
         stringBuilder.append("[ ");
-        Examinator<T> iterator = list.front();
+        Examinator<T> iterator = new Examinator<>(beforeBegin);
         while(iterator.hasNext()) {
             stringBuilder.append("<" + iterator.next() + "> ");
         }
         stringBuilder.append("]");
         return stringBuilder.toString();
-    }
-
-    public Examinator<T> front(){
-        return list.front();
     }
 }

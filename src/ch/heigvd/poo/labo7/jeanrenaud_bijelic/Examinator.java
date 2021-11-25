@@ -1,4 +1,4 @@
-package EX_ObjectList.src;
+package ch.heigvd.poo.labo7.jeanrenaud_bijelic;
 
 import java.util.Iterator;
 
@@ -12,12 +12,12 @@ public class Examinator<T> implements Iterator<Element<T>> {
     public boolean hasNext(){
         return current.next != null;
     }
+
     public Element<T> next(){
         if(!hasNext()){
-            throw new RuntimeException("No next element");
+            return null;
         }
-        Element<T> returnval = current;
         current = current.next;
-        return returnval;
+        return current;
     }
 }
