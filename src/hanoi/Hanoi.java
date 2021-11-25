@@ -5,6 +5,23 @@ import util.Stack;
 import java.util.Arrays;
 
 public class Hanoi {
+    // TODO Askip faut faire par copie
+    public Stack<Integer> getStackA() {
+        return stackA;
+    }
+
+    public Stack<Integer> getStackB() {
+        return stackB;
+    }
+
+    public Stack<Integer> getStackC() {
+        return stackC;
+    }
+
+    public int getNbDisks() {
+        return nbDisks;
+    }
+
     private Stack<Integer> stackA = new Stack<>();
     private Stack<Integer> stackB = new Stack<>();
     private Stack<Integer> stackC = new Stack<>();
@@ -12,16 +29,17 @@ public class Hanoi {
     private int nbDisks;
 
     private int counter = 0;
-    private int movedDisks = 0;
+
+    private HanoiDisplayer displayer;
 
     public Hanoi(int disks, HanoiDisplayer displayer){
         this(disks);
-        //HanoiDisplayer
+        this.displayer = displayer;
     }
 
-    public Hanoi(Integer disks){
+    public Hanoi(int disks){
         nbDisks = disks;
-        for(Integer i = disks; i > 0; --i){
+        for(int i = disks; i > 0; --i){
             stackA.push(i);
         }
     }
@@ -32,13 +50,13 @@ public class Hanoi {
 
     public void transfert(Stack<Integer> from, Stack<Integer> via, Stack<Integer> to, int n){
         if(n != 0){
-            ++movedDisks;
             transfert(from, to, via, n - 1);
             to.push(from.peek());
             from.pop();
             ++counter;
-            display();
-            ++movedDisks;
+            if(displayer != null){
+                displayer.display(this);
+            }
             transfert(via, from, to, n - 1);
         }
     }
@@ -54,7 +72,7 @@ public class Hanoi {
     private int[] objectArrayToIntArray(Object[] objects){
         int[] ints = new int[objects.length];
         for (int i = 0; i < objects.length; i++){
-            ints[i] = (int)objects[i];
+            ints[i] = (Integer)(objects[i]);
         }
         return ints;
     }
@@ -64,28 +82,6 @@ public class Hanoi {
     }
 
     public int turn(){
-        return movedDisks;
-    }
-
-    private void display(){
-        System.out.println("-- Turn " + counter);
-        System.out.println(stackA);
-        System.out.println(stackB);
-        System.out.println(stackC + "\n");
-    }
-
-
-    public static void main(String[] args) {
-        if(args.length != 1){
-            System.out.println("No enough args");
-            return;
-        }
-
-        int disks = Integer.parseInt(args[0]);
-
-        Hanoi hanoi = new Hanoi(disks);
-
-        hanoi.display();
-        hanoi.solve();
+        return counter;
     }
 }

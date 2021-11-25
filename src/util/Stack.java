@@ -22,6 +22,7 @@ public class Stack<T> {
             throw new EmptyStackException();
         }
         beforeBegin.next = beforeBegin.next.next;
+        --size;
     }
 
     /**
@@ -36,11 +37,12 @@ public class Stack<T> {
 
     public Object[] toArray() throws EmptyStackException{
         if(empty())
-            throw new EmptyStackException();
-        Examinator<T> examinator = new Examinator<>(beforeBegin);
+            return new Object[]{};
         Object[] objects = new Object[size];
-        for(int i = 0; i < objects.length; ++i){
-            objects[i] = examinator.next();
+        Examinator<T> iterator = new Examinator<>(beforeBegin);
+        int i = 0;
+        while(iterator.hasNext()) {
+            objects[i++] = iterator.next().data;
         }
         return objects;
     }
