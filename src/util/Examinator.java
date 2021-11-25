@@ -1,4 +1,4 @@
-package ch.heigvd.poo.labo7.jeanrenaud_bijelic;
+package util;
 
 import java.util.Iterator;
 

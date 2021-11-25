@@ -1,6 +1,5 @@
-package ch.heigvd.poo.labo7.jeanrenaud_bijelic;
+package util;
 
-import javax.sound.sampled.LineUnavailableException;
 import java.util.EmptyStackException;
 
 public class Stack<T> {
