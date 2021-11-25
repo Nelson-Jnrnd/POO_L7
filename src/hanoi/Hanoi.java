@@ -60,7 +60,7 @@ public class Hanoi {
     }
 
     public boolean finished(){
-        return stackA.empty() && stackB.empty() && !stackC.empty();
+        return stackA.empty() && stackB.empty();
     }
 
     public int turn(){
@@ -85,10 +85,7 @@ public class Hanoi {
 
         Hanoi hanoi = new Hanoi(disks);
 
-        for(int i = disks; i > 0; --i){
-            hanoi.stackA.push(i);
-        }
-
-
+        hanoi.display();
+        hanoi.solve();
     }
 }
