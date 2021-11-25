@@ -64,7 +64,7 @@ public class Hanoi {
     }
 
     public int turn(){
-
+        return movedDisks;
     }
 
     private void display(){
