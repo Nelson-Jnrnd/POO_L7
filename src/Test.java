@@ -1,11 +1,17 @@
 import hanoi.Hanoi;
 import hanoi.HanoiDisplayer;
 
+/**
+ * Tests graphic and console mode of Hanoi tower program
+ * @author Alen Bijelic
+ * @author Nelson Jeanrenaud
+ */
 public class Test {
     public static void main(String[] args) {
         switch (args.length) {
-            case 0: testGui();
-                    break;
+            case 0:
+                new hanoi.gui.JHanoi();
+                break;
             case 1:
                 int disks = Integer.parseInt(args[0]);
                 testConsole(disks);
@@ -14,15 +20,15 @@ public class Test {
         }
     }
 
+    /**
+     * Launch console mode solver
+     * @param disks
+     */
     public static void testConsole(int disks){
         HanoiDisplayer displayer = new HanoiDisplayer();
         Hanoi hanoi = new Hanoi(disks, displayer);
 
-        displayer.display(hanoi);
+        displayer.display(hanoi); // Display init towers state
         hanoi.solve();
-    }
-
-    public static void testGui(){
-        new hanoi.gui.JHanoi();
     }
 }
