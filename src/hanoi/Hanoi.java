@@ -44,6 +44,9 @@ public class Hanoi {
      * Begin the transfer of disks to solve the puzzle
      */
     public void solve(){
+        if(displayer != null){
+            displayer.display(this);
+        }
         transfert(stackA, stackB, stackC, nbDisks);
     }
 

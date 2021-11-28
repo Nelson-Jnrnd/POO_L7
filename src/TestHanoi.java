@@ -6,7 +6,7 @@ import hanoi.HanoiDisplayer;
  * @author Alen Bijelic
  * @author Nelson Jeanrenaud
  */
-public class Test {
+public class TestHanoi {
     public static void main(String[] args) {
         switch (args.length) {
             case 0:
@@ -22,13 +22,12 @@ public class Test {
 
     /**
      * Launch console mode solver
-     * @param disks
+     * @param disks Number of disks
      */
     public static void testConsole(int disks){
         HanoiDisplayer displayer = new HanoiDisplayer();
         Hanoi hanoi = new Hanoi(disks, displayer);
 
-        displayer.display(hanoi); // Display init towers state
         hanoi.solve();
     }
 }
