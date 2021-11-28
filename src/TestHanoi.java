@@ -24,10 +24,9 @@ public class TestHanoi {
      * Launch console mode solver
      * @param disks Number of disks
      */
-    public static void testConsole(int disks){
+    private static void testConsole(int disks){
         HanoiDisplayer displayer = new HanoiDisplayer();
         Hanoi hanoi = new Hanoi(disks, displayer);
-
         hanoi.solve();
     }
 }
