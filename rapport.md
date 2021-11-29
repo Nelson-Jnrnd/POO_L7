@@ -15,7 +15,26 @@ Ainsi, en spécifiant un paramètres numérique lors de l'exécution du programm
 ### Stack
 
 ## Hanoi
-TODO: décrire l'algorithme utilisé
+La classe Hanoi, ...
+
+### Algorithme
+Pour résoudre le jeu des tours de Hanoi, une solution récursive a été mise en place comme vu dans le cours ASD.
+
+Le cas trivial consiste à n'avoir aucun disque à transférer.
+Le cas général consiste à déplacer n disques de l'épingle A (from) à l'épingle C (to) en passant par l'épingle intérmédiaire B (via).
+L'algorithme complet se décompose en trois étape:
+1. Déplacer n-1 disques de l'épingle A à l'épingle B
+2. Déplacer le nième disque sur l'épingle C
+3. Déplacer les n-1 disques de l'épingle B à l'épingle C.
+
+Les deux règles des Tours de Hanoi consiste à ne transférer qu'un disque à la fois et on ne peut pas poser un disque sur un disque plus petit que lui.
+Pour cela, l'étape 1 se décompose en 3 étapes permettant de déplacer n-1 disques de gauche au milieu :
+1. Déplacer n-2 disques de gauche à droite 
+2. Déplacer le (n-1)ième disque de gauche au milieu
+3. Déplacer n-2 disques de droite au milieu
+
+L'étape 2 de l'algorithme consiste simplement à déplacer le dernier disque sur l'épingle intermédiaire.
+L'étape 3 est une étape récursive et ressemble à l'étape 1, mis à part qu'on déplace les disques de l'aiguille C à la B
 
 ## HanoiDisplayer
 
@@ -25,7 +44,7 @@ TODO: décrire l'algorithme utilisé
 En supposant des moines surentraînés capables de déplacer un disque à la seconde, combien de temps
 reste-t-il avant que l’univers disparaisse (celui-ci a actuellement 13.8 milliards d’années) ?
 
->L'algorithme récursive des Tours de Hanoï a une complexité de O(2^n), plus précisément 2^(n-1) déplacement de disques avec n = le nombre de disques.
-On peut donc facilement calculer le nombre de déplacemenet total : 2^(64-1) = 2^63 = 9'223'372'036'854'775'808 de secondes pour terminer les Tours de Hanoï à 64 disques. Cela donne 292'471'208'677,54 d'années ou 292,5 milliards d'année. On est à plus de 21 fois le temps restant avant que l'univers disparaisse.
+>L'algorithme récursive des Tours de Hanoï a une complexité de O(2^n), plus précisément 2^n-1 déplacement de disques avec n = le nombre de disques.
+On peut donc facilement calculer le nombre de déplacemenet total : 2^64-1 = 18'446'744'073'709'551'615 de secondes pour terminer les Tours de Hanoï à 64 disques. Cela donne 584'942'417'355,1 d'années ou 584,9 milliards d'année. On est à plus de 42 fois le temps restant avant que l'univers disparaisse.
 
 # Diagramme UML
