@@ -8,11 +8,15 @@ Ainsi, en spécifiant un paramètres numérique lors de l'exécution du programm
 
 # Choix d'implémentation
 ## Structure de donnée
-### Element
-
-### Examinator
 
 ### Stack
+L'implémentation d'une Stack était requise par la donnée du laboratoire. Et pour la mètre en place,
+nous avons décidé d'utiliser une structure du type liste simplement chainée.
+
+### Element
+Étant donnée l'implémentation de la liste simplement chainée. Les éléments pointent sur un autre élément qui est l'élément suivant dans la liste.
+
+### Examinator
 
 ## Hanoi
 TODO: décrire l'algorithme utilisé
