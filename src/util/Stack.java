@@ -47,7 +47,7 @@ public class Stack<T> {
     public T peek() throws EmptyStackException {
         if(empty())
             throw new EmptyStackException();
-        return beforeBegin.next.data;
+        return beforeBegin.next.getData();
     }
 
     /**
@@ -62,7 +62,7 @@ public class Stack<T> {
         Examinator<T> iterator = new Examinator<>(beforeBegin);
         int i = 0;
         while(iterator.hasNext()) {
-            objects[i++] = iterator.next().data;
+            objects[i++] = iterator.next().getData();
         }
         return objects;
     }

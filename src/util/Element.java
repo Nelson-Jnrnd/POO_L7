@@ -7,7 +7,7 @@ package util;
  */
 public class Element<T> {
 
-    protected T data;
+    private T data;
     protected Element<T> next;
 
     /**
@@ -18,6 +18,10 @@ public class Element<T> {
     public Element(T data, Element<T> next) {
         this.data = data;
         this.next = next;
+    }
+
+    protected T getData(){
+        return data;
     }
 
     /**
