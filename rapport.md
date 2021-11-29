@@ -10,17 +10,37 @@ Ainsi, en spécifiant un paramètres numérique lors de l'exécution du programm
 ## Structure de donnée
 
 ### Stack
-L'implémentation d'une Stack était requise par la donnée du laboratoire. Et pour la mètre en place,
+L'implémentation d'une Stack était requise par la donnée du laboratoire. Et pour le mètre en place,
 nous avons décidé d'utiliser une structure du type liste simplement chainée.
 
-### Element
+#### Element
 Étant donnée l'implémentation de la liste simplement chainée. Les éléments pointent sur un autre élément qui est l'élément suivant dans la liste.
 
-### Examinator
+#### Examinator
+La classe examinator est un iterateur sur les éléments de notre stack. Il implémente les fonctionnalitées usuelles d'un iterateur.
 
+L'iterateur beforeBegin contenu dans la stack est un élément fantome au devant la tête de la stack. Il nous permet d'implémenter
+la définition correcte de l'iterateur.
+
+#### Taille
+Nous avons décidé de stocker en mémoire la taille de la liste. Cette valeur est incrémentée et décrémenté en fonction des opérations
+effectuées sur la stack. De cette manière, il n'est pas nécessaire de parcourir l'intégralité des éléments pour connaitre la taille.
+Ce qui réduit la complexité de la méthode toArray.
 ## Hanoi
-La classe Hanoi, ...
+La classe Hanoi, contient 3 stacks représentant chacune une des tours d'Hanoi. Elles contiennent des entiers, qui corréspondent
+aux numéros des disques qui sont sur la tour.
 
+L'utilisateur peut fournir un hanoiDisplayer en paramètre s'il veut que le résultat du jeu soit affiché dans la console ou en mode graphique.
+Dans le cas contraire il peut simplement appeler le constructeur à 1 paramètre.
+
+### Status
+La méthode status fait appel aux fonctions toArray des stacks de l'instance, le tableau est formé de trois entrées qui correspond
+au trois tours. Les stacks étant génériques, il faut alors convertir les tableaux d'objets retournés en tableaux d'entiers.
+
+### Finished
+Pour savoir si l'expérience est terminée il n'est pas nécessaire de vérifier le contenu des trois tours.
+Il nous suffit de vérifié que les deux premières tours sont vides. La totalité des disques sont alors garentis de se trouver
+sur la troisième tour.
 ### Algorithme
 Pour résoudre le jeu des tours de Hanoi, une solution récursive a été mise en place comme vu dans le cours ASD.
 

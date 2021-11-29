@@ -7,7 +7,7 @@ import java.util.Iterator;
  * @author Alen Bijelic
  * @author Nelson Jeanrenaud
  */
-public class Examinator<T> implements Iterator<Element<T>> {
+public class Examinator<T> {
 
     private Element<T> current;
 
