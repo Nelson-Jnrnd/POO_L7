@@ -10,7 +10,7 @@ Ainsi, en spécifiant un paramètres numérique lors de l'exécution du programm
 ## Structure de donnée
 
 ### Stack
-L'implémentation d'une Stack était requise par la donnée du laboratoire. Et pour le mètre en place,
+L'implémentation d'une Stack était requise par la donnée du laboratoire. Et pour le mettre en place,
 nous avons décidé d'utiliser une structure du type liste simplement chainée.
 
 #### Element
@@ -61,8 +61,10 @@ L'étape 2 de l'algorithme consiste simplement à déplacer le dernier disque su
 L'étape 3 est une étape récursive et ressemble à l'étape 1, mis à part qu'on déplace les disques de l'aiguille C à la B
 
 ## HanoiDisplayer
+La classe contient la méthode display prenant en paramètre un Hanoi et permet d'affiche simplement l'état actuel des 3 stacks, ainsi que le turn qui correspond au nombre de disques déplacés.
 
 ## TestHanoi
+Cette classe permet de tester le mode graphique et le mode console de l'application. Si l'utilisateur entre un entier en paramètre, c'est le mode console qui sera lancé et le paramètre correspond au nombre de disques. Sinon le mode graphique se lance et on peut choisir le nombre de disques.
 
 # Question
 En supposant des moines surentraînés capables de déplacer un disque à la seconde, combien de temps
