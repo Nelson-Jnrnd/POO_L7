@@ -11,7 +11,7 @@ Ainsi, en spécifiant un paramètres numérique lors de l'exécution du programm
 
 ### Stack
 L'implémentation d'une Stack était requise par la donnée du laboratoire. Et pour le mettre en place,
-nous avons décidé d'utiliser une structure du type liste simplement chainée.
+nous avons décidé d'utiliser une structure du type liste simplement chainée. Un constructeur de copie a été ajouté pour les getters des Stack pour éviter de modifier directment les données de la structure. Les getters ne sont utilisés que dans HanoiDisplayer pour l'affichage des états des aiguilles.
 
 #### Element
 Étant donnée l'implémentation de la liste simplement chainée. Les éléments pointent sur un autre élément qui est l'élément suivant dans la liste.

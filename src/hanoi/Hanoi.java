@@ -113,7 +113,6 @@ public class Hanoi {
         return counter;
     }
 
-    // TODO Askip faut faire par copie
     /**
      * Get elements of the first needle
      * @return The first stack

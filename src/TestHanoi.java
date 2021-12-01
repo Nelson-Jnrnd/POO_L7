@@ -1,5 +1,6 @@
 import hanoi.Hanoi;
 import hanoi.HanoiDisplayer;
+import util.Stack;
 
 /**
  * Tests graphic and console mode of Hanoi tower program

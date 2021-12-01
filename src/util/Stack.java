@@ -10,16 +10,24 @@ import java.util.EmptyStackException;
 public class Stack<T> {
 
     private final Element<T> beforeBegin;
-    private int size = 0;
+    private int size;
 
     /**
      * Stack constructor
      */
     public Stack() {
         beforeBegin = new Element<>(null, null);
+        size = 0;
     }
-    public Stack(Stack<T> original){
+
+    /**
+     * Stack copy construcor
+     * @param original Stack to copy from
+     */
+    public Stack(Stack<T> original) throws IllegalArgumentException {
         this();
+        if(original == null)
+            throw new IllegalArgumentException("Copy constructor was given null argument");
         Examinator<T> iterator = new Examinator<>(original.beforeBegin);
         while(iterator.hasNext()){
             push(iterator.next().getData());
