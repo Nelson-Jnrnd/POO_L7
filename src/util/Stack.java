@@ -10,6 +10,7 @@ import java.util.EmptyStackException;
 public class Stack<T> {
 
     private final Element<T> beforeBegin;
+
     private int size;
 
     /**
@@ -38,21 +39,24 @@ public class Stack<T> {
      * Add new element in the stack containing the object
      * @param object Object to add into the stack
      */
-    public void push(T object) {
+    public T push(T object) {
         beforeBegin.next = new Element(object, beforeBegin.next);
         ++size;
+        return object;
     }
 
     /**
      * Delete the top Element of the stack
      * @throws EmptyStackException If there is no Elements in the stack
      */
-    public void pop() throws EmptyStackException {
+    public T pop() throws EmptyStackException {
         if(empty()){
             throw new EmptyStackException();
         }
+        T returnVal = beforeBegin.next.getData();
         beforeBegin.next = beforeBegin.next.next;
         --size;
+        return returnVal;
     }
 
     /**
@@ -88,6 +92,14 @@ public class Stack<T> {
      */
     public boolean empty(){
         return beforeBegin.next == null;
+    }
+
+    /**
+     * Get the stack size
+     * @return Stack size
+     */
+    public int getSize() {
+        return size;
     }
 
     /**
