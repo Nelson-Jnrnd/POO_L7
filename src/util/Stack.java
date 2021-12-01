@@ -18,6 +18,13 @@ public class Stack<T> {
     public Stack() {
         beforeBegin = new Element<>(null, null);
     }
+    public Stack(Stack<T> original){
+        this();
+        Examinator<T> iterator = new Examinator<>(original.beforeBegin);
+        while(iterator.hasNext()){
+            push(iterator.next().getData());
+        }
+    }
 
     /**
      * Add new element in the stack containing the object

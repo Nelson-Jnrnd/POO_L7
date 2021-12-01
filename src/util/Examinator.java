@@ -1,13 +1,11 @@
 package util;
 
-import java.util.Iterator;
-
 /**
  * Generic Examinator (Iterator) used for Element
  * @author Alen Bijelic
  * @author Nelson Jeanrenaud
  */
-public class Examinator<T> {
+class Examinator<T> {
 
     private Element<T> current;
 

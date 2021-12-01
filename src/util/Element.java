@@ -5,7 +5,7 @@ package util;
  * @author Alen Bijelic
  * @author Nelson Jeanrenaud
  */
-public class Element<T> {
+class Element<T> {
 
     private T data;
     protected Element<T> next;

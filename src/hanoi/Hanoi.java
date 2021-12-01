@@ -119,7 +119,7 @@ public class Hanoi {
      * @return The first stack
      */
     public Stack<Integer> getStackA() {
-        return stackA;
+        return new Stack<>(stackA);
     }
 
     /**
@@ -127,7 +127,7 @@ public class Hanoi {
      * @return The second stack
      */
     public Stack<Integer> getStackB() {
-        return stackB;
+        return new Stack<>(stackB);
     }
 
     /**
@@ -135,6 +135,6 @@ public class Hanoi {
      * @return The third stack
      */
     public Stack<Integer> getStackC() {
-        return stackC;
+        return new Stack<>(stackC);
     }
 }
