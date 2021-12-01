@@ -26,6 +26,9 @@ public class TestStack {
         changingToArrayElementShouldNotModifyStack();
     }
 
+    /**
+     * Test to check if an initialized stack is empty
+     */
     public static void uninitializedStackShouldBeEmpty(){
         boolean testStatus = true;
         Stack<Integer> stack = new Stack<>();
@@ -35,6 +38,9 @@ public class TestStack {
         printTestResult("Test - uninitialized stacks should be empty : ", testStatus);
     }
 
+    /**
+     * Test to check if a filled stack is not empty
+     */
     public static void stackWithElementShouldNotBeEmpty(){
         boolean testStatus = true;
         Stack<Integer> stack = new Stack<>();
@@ -47,6 +53,9 @@ public class TestStack {
         printTestResult("Test - stack with elements should not be empty : ", testStatus);
     }
 
+    /**
+     * Check if copy constructor works
+     */
     public static void copyingStackFromAnotherShouldWork(){
         boolean testStatus = true;
         Stack<Integer> stack1 = new Stack<>();
@@ -60,6 +69,9 @@ public class TestStack {
         printTestResult("Test - Copying stack from another stack should work : ", testStatus);
     }
 
+    /**
+     * Check if copying stack with null argument throw an exception
+     */
     public static void copyingStackFromNullShouldThrowException(){
         boolean testStatus = false;
         try{
@@ -72,6 +84,9 @@ public class TestStack {
         printTestResult("Test - Copying stack from another stack should work : ", testStatus);
     }
 
+    /**
+     * Modify values of a copied stack and check if it does not modify original stack
+     */
     public static void modifyValuesOfCopiedStackShouldNotModifyOriginalStack(){
         boolean testStatus = false;
 
@@ -98,6 +113,9 @@ public class TestStack {
         printTestResult("Test - Modify value in a copied Stack should not modify original Stack : ", testStatus);
     }
 
+    /**
+     * Add elements in stack then remove all and check if the stack is empty
+     */
     public static void stackShouldBeEmptyAfterElementsAreRemoved(){
         boolean testStatus = true;
         Stack<Integer> stack = new Stack<>();
@@ -113,6 +131,9 @@ public class TestStack {
         printTestResult("Test - stack should be empty after removing all it's elements : ", testStatus);
     }
 
+    /**
+     * Check if the size of an uninitialzed Stack is equal to 0
+     */
     public static void uninitializedStackShouldHaveSize0(){
         boolean testStatus = true;
         Stack<Integer> stack = new Stack<>();
@@ -122,6 +143,9 @@ public class TestStack {
         printTestResult("Test - unintialized stack should have size 0 : ", testStatus);
     }
 
+    /**
+     * Test if the size of the stack is correct at all times
+     */
     public static void stackSizeShouldBeCorrect(){
         boolean testStatus = true;
         Stack<Integer> stack = new Stack<>();
@@ -142,6 +166,9 @@ public class TestStack {
         printTestResult("Test - stack size should be correct : ", testStatus);
     }
 
+    /**
+     * Test if the overall behavior of the stack is working as intended
+     */
     public static void pushingAndPoppingObjectsShouldReturnThemInReverseOrder(){
         boolean testStatus = true;
         int input[] = new int[]{1, 2, 3, 4, 5};
@@ -164,6 +191,9 @@ public class TestStack {
         printTestResult("Test - pushing and popping objects should return them in reverse order : ", testStatus);
     }
 
+    /**
+     * Test if the pop method is throwing the correct exception when applied on a empty stack
+     */
     public static void popOnEmptyListShouldThrowException(){
         boolean testStatus = true;
         Stack<Integer> stack = new Stack<>();
@@ -175,6 +205,9 @@ public class TestStack {
         printTestResult("Test - pop on empty list throws an exception : ", testStatus);
     }
 
+    /**
+     * Test if the peek method is working as intended
+     */
     public static void peekShouldReturnTopOfTheStack(){
         boolean testStatus = true;
         Stack<Integer> stack = new Stack<>();
@@ -195,6 +228,9 @@ public class TestStack {
         printTestResult("Test - peek should return the top of the stack : ", testStatus);
     }
 
+    /**
+     * Test if the value returned by ToArray is correct if the stack is empty
+     */
     public static void emptyStackToArrayShouldReturnEmptyArray(){
         boolean testStatus = true;
         Stack<Integer> stack = new Stack<>();
@@ -205,6 +241,9 @@ public class TestStack {
         printTestResult("Test - array conversion of an empty stack should return an empty array : ", testStatus);
     }
 
+    /**
+     * Test if the value returned by ToArray is correct
+     */
     public static void filledStackToArrayShouldReturnNoEmptyArray(){
         boolean testStatus = true;
         Stack<Integer> stack = new Stack<>();
@@ -228,6 +267,10 @@ public class TestStack {
 
     }
 
+    /**
+     * Test if the array returned by toArray is correctly returned
+     * If so modifying it should not modify the stack
+     */
     public static void changingToArrayElementShouldNotModifyStack(){
         boolean testStatus = true;
 

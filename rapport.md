@@ -66,6 +66,9 @@ La classe contient la méthode display prenant en paramètre un Hanoi et permet 
 ## TestHanoi
 Cette classe permet de tester le mode graphique et le mode console de l'application. Si l'utilisateur entre un entier en paramètre, c'est le mode console qui sera lancé et le paramètre correspond au nombre de disques. Sinon le mode graphique se lance et on peut choisir le nombre de disques.
 
+## TestStack
+Pour tester le bon fonctionnement de notre classe stack, nous utilisons une batterie de méthode test pour vérifier que la classe réagit de manière adéquate à tous les cas possibles, y compris les cas limite.
+
 # Question
 En supposant des moines surentraînés capables de déplacer un disque à la seconde, combien de temps
 reste-t-il avant que l’univers disparaisse (celui-ci a actuellement 13.8 milliards d’années) ?
